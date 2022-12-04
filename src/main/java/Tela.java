@@ -4,6 +4,7 @@ import java.awt.Font;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JTextField;
 import javax.swing.border.Border;
 import javax.swing.border.TitledBorder;
 
@@ -153,6 +154,35 @@ public class Tela extends JFrame {
 		quad.setFocusPainted(false);
 		raiz.setFocusPainted(false);
 		divis.setFocusPainted(false);
+		
+		//Aumentando tamanho da fonte
+		n0.setFont(new Font("Arial", Font.BOLD, 20));
+		n1.setFont(new Font("Arial", Font.BOLD, 20));
+		n2.setFont(new Font("Arial", Font.BOLD, 20));
+		n3.setFont(new Font("Arial", Font.BOLD, 20));
+		n4.setFont(new Font("Arial", Font.BOLD, 20));
+		n5.setFont(new Font("Arial", Font.BOLD, 20));
+		n6.setFont(new Font("Arial", Font.BOLD, 20));
+		n7.setFont(new Font("Arial", Font.BOLD, 20));
+		n8.setFont(new Font("Arial", Font.BOLD, 20));
+		n9.setFont(new Font("Arial", Font.BOLD, 20));
+		igual.setFont(new Font("Arial", Font.BOLD, 20));
+		dot.setFont(new Font("Arial", Font.BOLD, 20));
+		mais.setFont(new Font("Arial", Font.BOLD, 20));
+		menos.setFont(new Font("Arial", Font.BOLD, 20));
+		mult.setFont(new Font("Arial", Font.BOLD, 20));
+		clean.setFont(new Font("Arial", Font.BOLD, 20));
+		quad.setFont(new Font("Arial", Font.BOLD, 20));
+		raiz.setFont(new Font("Arial", Font.BOLD, 20));
+		divis.setFont(new Font("Arial", Font.BOLD, 20));
+		/***********************************************************/
+		
+		/*************************JTextField************************/
+		JTextField tela = new JTextField("0");
+		tela.setBounds(17, 15, 350, 140);
+		tela.setFont(new Font("Arial", Font.BOLD, 40));
+		tela.setHorizontalAlignment(JTextField.RIGHT);
+		add(tela);
 		/***********************************************************/
 		
 		setVisible(true);
