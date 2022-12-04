@@ -1,6 +1,9 @@
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.AbstractButton;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -8,7 +11,29 @@ import javax.swing.JTextField;
 import javax.swing.border.Border;
 import javax.swing.border.TitledBorder;
 
-public class Tela extends JFrame {
+public class Tela extends JFrame implements ActionListener{
+	
+	JButton n0;
+	JButton n1;
+	JButton n2;
+	JButton n3;
+	JButton n4;
+	JButton n5;
+	JButton n6;
+	JButton n7;
+	JButton n8;
+	JButton n9;
+	JButton igual;
+	JButton dot;
+	JButton mais;
+	JButton menos;
+	JButton mult;
+	JButton clean;
+	JButton quad;
+	JButton raiz;
+	JButton divis;
+	
+	JTextField tela;
 	
 	//Construtor da classe
 	public Tela(){
@@ -23,88 +48,100 @@ public class Tela extends JFrame {
 		/*************************JButton's*************************/
 		
 		//Numeros************************
-		JButton n0 = new JButton("0");	
+		n0 = new JButton("0");	
 		n0.setBounds(0, 570, 200, 100);
+		n0.addActionListener(this);
 		add(n0);
 		
-		JButton n1 = new JButton("1");	
+		n1 = new JButton("1");	
 		n1.setBounds(0, 470, 100, 100);
+		n1.addActionListener(this);
 		add(n1);
 		
-		JButton n2 = new JButton("2");	
+		n2 = new JButton("2");	
 		n2.setBounds(100, 470, 100, 100);
+		n2.addActionListener(this);
 		add(n2);
 		
-		JButton n3 = new JButton("3");	
+		n3 = new JButton("3");	
 		n3.setBounds(200, 470, 100, 100);
+		n3.addActionListener(this);
 		add(n3);
 		
-		JButton n4 = new JButton("4");	
+		n4 = new JButton("4");	
 		n4.setBounds(0, 370, 100, 100);
+		n4.addActionListener(this);
 		add(n4);
 		
-		JButton n5 = new JButton("5");	
+		n5 = new JButton("5");	
 		n5.setBounds(100, 370, 100, 100);
+		n5.addActionListener(this);
 		add(n5);
 		
-		JButton n6 = new JButton("6");	
+		n6 = new JButton("6");	
 		n6.setBounds(200, 370, 100, 100);
+		n6.addActionListener(this);
 		add(n6);
 		
-		JButton n7 = new JButton("7");	
+		n7 = new JButton("7");	
 		n7.setBounds(0, 270, 100, 100);
+		n7.addActionListener(this);
 		add(n7);
 		
-		JButton n8 = new JButton("8");	
+		n8 = new JButton("8");	
 		n8.setBounds(100, 270, 100, 100);
+		n8.addActionListener(this);
 		add(n8);
 		
-		JButton n9 = new JButton("9");	
+		n9 = new JButton("9");	
 		n9.setBounds(200, 270, 100, 100);
+		n9.addActionListener(this);
 		add(n9);
 		
 		
 		//Caracteres*********************
-		JButton igual = new JButton("=");	
+		igual = new JButton("=");	
 		igual.setBounds(300, 570, 85, 100);
 		add(igual);
 		igual.setBackground(new Color(214,129,2));
 		
-		JButton dot = new JButton(".");	
+		dot = new JButton(".");	
 		dot.setBounds(200, 570, 100, 100);
+		dot.addActionListener(this);
 		add(dot);
 		
-		JButton mais = new JButton("+");	
+		mais = new JButton("+");	
 		mais.setBounds(300, 470, 85, 100);
 		add(mais);
 		mais.setBackground(new Color(214,129,2));
 		
-		JButton menos = new JButton("-");	
+		menos = new JButton("-");	
 		menos.setBounds(300, 370, 85, 100);
 		add(menos);
 		menos.setBackground(new Color(214,129,2));
 		
-		JButton mult = new JButton("X");	
+		mult = new JButton("X");	
 		mult.setBounds(300, 270, 85, 100);
 		add(mult);
 		mult.setBackground(new Color(214,129,2));
 		
-		JButton clean = new JButton("C");	
+		clean = new JButton("C");	
 		clean.setBounds(0, 170, 100, 100);
+		clean.addActionListener(this::limparTela);
 		add(clean);
 		clean.setBackground(new Color(214,129,2));
 		
-		JButton quad = new JButton(" X²");	
+		quad = new JButton(" X²");	
 		quad.setBounds(100, 170, 100, 100);
 		add(quad);
 		quad.setBackground(new Color(214,129,2));
 		
-		JButton raiz = new JButton("√x");	
+		raiz = new JButton("√x");	
 		raiz.setBounds(200, 170, 100, 100);
 		add(raiz);
 		raiz.setBackground(new Color(214,129,2));
 		
-		JButton divis = new JButton("÷");	
+		divis = new JButton("÷");	
 		divis.setBounds(300, 170, 85, 100);
 		add(divis);
 		divis.setBackground(new Color(214,129,2));
@@ -178,7 +215,7 @@ public class Tela extends JFrame {
 		/***********************************************************/
 		
 		/*************************JTextField************************/
-		JTextField tela = new JTextField("0");
+		tela = new JTextField("0");
 		tela.setBounds(17, 15, 350, 140);
 		tela.setFont(new Font("Arial", Font.BOLD, 40));
 		tela.setHorizontalAlignment(JTextField.RIGHT);
@@ -188,4 +225,29 @@ public class Tela extends JFrame {
 		setVisible(true);
 		
 	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		
+		Object objetoNumero = e.getSource();
+
+		if(objetoNumero == n0) {tela.setText(tela.getText() + "0");}
+		if(objetoNumero == n1) {tela.setText(tela.getText() + "1");}
+		if(objetoNumero == n2) {tela.setText(tela.getText() + "2");}
+		if(objetoNumero == n3) {tela.setText(tela.getText() + "3");}
+		if(objetoNumero == n4) {tela.setText(tela.getText() + "4");}
+		if(objetoNumero == n5) {tela.setText(tela.getText() + "5");}
+		if(objetoNumero == n6) {tela.setText(tela.getText() + "6");}
+		if(objetoNumero == n7) {tela.setText(tela.getText() + "7");}
+		if(objetoNumero == n8) {tela.setText(tela.getText() + "8");}
+		if(objetoNumero == n9) {tela.setText(tela.getText() + "9");}
+		if(objetoNumero == dot) {tela.setText(tela.getText() + ".");}
+	}
+
+		
+	private void limparTela(ActionEvent actionevent1) {
+		tela.setText("0");
+	}
+	
+	
 }
