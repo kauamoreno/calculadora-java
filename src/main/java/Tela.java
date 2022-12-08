@@ -102,6 +102,7 @@ public class Tela extends JFrame implements ActionListener{
 		//Caracteres*********************
 		igual = new JButton("=");	
 		igual.setBounds(300, 570, 85, 100);
+		igual.addActionListener(this::operacao);
 		add(igual);
 		igual.setBackground(new Color(214,129,2));
 		
@@ -112,16 +113,19 @@ public class Tela extends JFrame implements ActionListener{
 		
 		mais = new JButton("+");	
 		mais.setBounds(300, 470, 85, 100);
+		mais.addActionListener(this::operacao);
 		add(mais);
 		mais.setBackground(new Color(214,129,2));
 		
 		menos = new JButton("-");	
 		menos.setBounds(300, 370, 85, 100);
+		menos.addActionListener(this::operacao);
 		add(menos);
 		menos.setBackground(new Color(214,129,2));
 		
 		mult = new JButton("X");	
 		mult.setBounds(300, 270, 85, 100);
+		mult.addActionListener(this::operacao);
 		add(mult);
 		mult.setBackground(new Color(214,129,2));
 		
@@ -133,16 +137,19 @@ public class Tela extends JFrame implements ActionListener{
 		
 		quad = new JButton(" X²");	
 		quad.setBounds(100, 170, 100, 100);
+		quad.addActionListener(this::operacao);
 		add(quad);
 		quad.setBackground(new Color(214,129,2));
 		
 		raiz = new JButton("√x");	
 		raiz.setBounds(200, 170, 100, 100);
+		raiz.addActionListener(this::operacao);
 		add(raiz);
 		raiz.setBackground(new Color(214,129,2));
 		
 		divis = new JButton("÷");	
 		divis.setBounds(300, 170, 85, 100);
+		divis.addActionListener(this::operacao);
 		add(divis);
 		divis.setBackground(new Color(214,129,2));
 		
@@ -231,17 +238,35 @@ public class Tela extends JFrame implements ActionListener{
 		
 		Object objetoNumero = e.getSource();
 
-		if(objetoNumero == n0) {tela.setText(tela.getText() + "0");}
-		if(objetoNumero == n1) {tela.setText(tela.getText() + "1");}
-		if(objetoNumero == n2) {tela.setText(tela.getText() + "2");}
-		if(objetoNumero == n3) {tela.setText(tela.getText() + "3");}
-		if(objetoNumero == n4) {tela.setText(tela.getText() + "4");}
-		if(objetoNumero == n5) {tela.setText(tela.getText() + "5");}
-		if(objetoNumero == n6) {tela.setText(tela.getText() + "6");}
-		if(objetoNumero == n7) {tela.setText(tela.getText() + "7");}
-		if(objetoNumero == n8) {tela.setText(tela.getText() + "8");}
-		if(objetoNumero == n9) {tela.setText(tela.getText() + "9");}
-		if(objetoNumero == dot) {tela.setText(tela.getText() + ".");}
+		String verifica = tela.getText();
+		switch(verifica) {
+		  case "0":
+			  if(objetoNumero == n0) {tela.setText("0");}
+			  if(objetoNumero == n1) {tela.setText("1");}
+			  if(objetoNumero == n2) {tela.setText("2");}
+			  if(objetoNumero == n3) {tela.setText("3");}
+			  if(objetoNumero == n4) {tela.setText("4");}
+			  if(objetoNumero == n5) {tela.setText("5");}
+			  if(objetoNumero == n6) {tela.setText("6");}
+			  if(objetoNumero == n7) {tela.setText("7");}
+			  if(objetoNumero == n8) {tela.setText("8");}
+			  if(objetoNumero == n9) {tela.setText("9");}
+			  if(objetoNumero == dot) {tela.setText(tela.getText() + ".");}
+			  break;
+		  default:
+			  if(objetoNumero == n0) {tela.setText(tela.getText() + "0");}
+			  if(objetoNumero == n1) {tela.setText(tela.getText() + "1");}
+			  if(objetoNumero == n2) {tela.setText(tela.getText() + "2");}
+			  if(objetoNumero == n3) {tela.setText(tela.getText() + "3");}
+			  if(objetoNumero == n4) {tela.setText(tela.getText() + "4");}
+			  if(objetoNumero == n5) {tela.setText(tela.getText() + "5");}
+			  if(objetoNumero == n6) {tela.setText(tela.getText() + "6");}
+			  if(objetoNumero == n7) {tela.setText(tela.getText() + "7");}
+			  if(objetoNumero == n8) {tela.setText(tela.getText() + "8");}
+			  if(objetoNumero == n9) {tela.setText(tela.getText() + "9");}
+			  if(objetoNumero == dot) {tela.setText(tela.getText() + ".");}
+		}
+		
 	}
 
 		
@@ -249,5 +274,71 @@ public class Tela extends JFrame implements ActionListener{
 		tela.setText("0");
 	}
 	
+	
+	Integer numero1;
+
+	private void operacao(ActionEvent e) {
+		
+		Object operacao = e.getSource();
+		
+		numero1 = Integer.parseInt(tela.getText());
+		
+		tela.setText("0");
+		
+		if(operacao == mais) {
+			tela.setText(numero1.toString());
+			if(operacao == igual) {
+				//Integer numero2 = Integer.parseInt(tela.getText());
+				//Integer resultado = numero1 + numero2;
+				tela.setText(numero1.toString());
+			}
+		}
+		
+		if(operacao == menos) {
+
+			//Integer numero2 = Integer.parseInt(tela.getText());
+			//Integer resultado = numero1 - numero2;
+			//tela.setText(resultado.toString());
+		}
+		if(operacao == mult) {
+
+			//Integer numero2 = Integer.parseInt(tela.getText());
+			//Integer resultado = numero1 * numero2;
+			//tela.setText(resultado.toString());
+		}
+		if(operacao == divis) {
+
+			//Integer numero2 = Integer.parseInt(tela.getText());
+			//Integer resultado = numero1 / numero2;
+			//tela.setText(resultado.toString());
+		}
+		
+		if(operacao == igual) {
+			//tela.setText(resultado.toString());
+		}
+		
+		
+		
+		/*
+		Integer resultado = null;
+		
+		if(operacao == igual) {
+			mostraResultado(e, resultado);
+		}
+		mostraResultado(e, resultado);
+		if(operacao == quad) {
+			Integer potenciacao = (int) Math.pow(numero1, 2);
+			resultado = potenciacao;
+			//mostraResultado(e, potenciacao);
+		}
+		if(operacao == raiz) {
+			Integer raizQuad = (int) Math.sqrt(numero1);
+			resultado = raizQuad;
+			//mostraResultado(e, raizQuad);
+		}
+		*/
+		
+	
+	}
 	
 }
