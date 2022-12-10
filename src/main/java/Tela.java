@@ -239,6 +239,17 @@ public class Tela extends JFrame implements ActionListener{
 		Object objetoNumero = e.getSource();
 
 		String verifica = tela.getText();
+		
+		
+		
+		//Para caso ja haja um "." não poder ser acrescentado outro
+		if(tela.getText().contains(".")) {
+			if(objetoNumero == dot) {tela.setText(tela.getText() + "");}
+		}else {
+			if(objetoNumero == dot) {tela.setText(tela.getText() + ".");}
+		}
+		
+		
 		switch(verifica) {
 		  case "0":
 			  if(objetoNumero == n0) {tela.setText("0");}
@@ -251,7 +262,6 @@ public class Tela extends JFrame implements ActionListener{
 			  if(objetoNumero == n7) {tela.setText("7");}
 			  if(objetoNumero == n8) {tela.setText("8");}
 			  if(objetoNumero == n9) {tela.setText("9");}
-			  if(objetoNumero == dot) {tela.setText(tela.getText() + ".");}
 			  break;
 		  default:
 			  if(objetoNumero == n0) {tela.setText(tela.getText() + "0");}
@@ -264,9 +274,9 @@ public class Tela extends JFrame implements ActionListener{
 			  if(objetoNumero == n7) {tela.setText(tela.getText() + "7");}
 			  if(objetoNumero == n8) {tela.setText(tela.getText() + "8");}
 			  if(objetoNumero == n9) {tela.setText(tela.getText() + "9");}
-			  if(objetoNumero == dot) {tela.setText(tela.getText() + ".");}
+			  
 		}
-		
+	
 	}
 
 		
@@ -279,6 +289,19 @@ public class Tela extends JFrame implements ActionListener{
 
 	private void operacao(ActionEvent e) {
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		/*
 		Object operacao = e.getSource();
 		
 		numero1 = Integer.parseInt(tela.getText());
@@ -316,7 +339,7 @@ public class Tela extends JFrame implements ActionListener{
 		if(operacao == igual) {
 			//tela.setText(resultado.toString());
 		}
-		
+		*/
 		
 		
 		/*
