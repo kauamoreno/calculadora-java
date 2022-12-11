@@ -333,33 +333,32 @@ public class Tela extends JFrame implements ActionListener{
 		
 		
 		if(operacao == igual) {
-			
 			Double resultado;
-			
+
 			switch(operadorAritmetico) {
 			
 			  case "mais":
 				  numero2 = Double.parseDouble(tela.getText());
 				  resultado = numero1 + numero2;
-				  tela.setText("=" + resultado.toString());
+				  tela.setText(resultado.toString());
 				  break;
 			    
 			  case "menos":
 				  numero2 = Double.parseDouble(tela.getText());
 				  resultado = numero1 - numero2;
-				  tela.setText("=" + resultado.toString());
+				  tela.setText(resultado.toString());
 				  break;
 			    
 			  case "mult":
 				  numero2 = Double.parseDouble(tela.getText());
 				  resultado = numero1 * numero2;
-				  tela.setText("=" + resultado.toString());
+				  tela.setText(resultado.toString());
 				  break;
 				
 			  case "divis":
 				  numero2 = Double.parseDouble(tela.getText());
 				  resultado = numero1 / numero2;
-				  tela.setText("=" + resultado.toString());
+				  tela.setText(resultado.toString());
 				  break;
 			}
 		
