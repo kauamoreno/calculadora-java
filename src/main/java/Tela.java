@@ -2,6 +2,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.DecimalFormat;
 
 import javax.swing.AbstractButton;
 import javax.swing.BorderFactory;
@@ -280,43 +281,43 @@ public class Tela extends JFrame implements ActionListener{
 	
 	
 	String operadorAritmetico;
-	int numero1 = 0;
-	int numero2;
+	double numero1 = 0;
+	double numero2;
 	
 	private void operacao(ActionEvent e) {
-		
+	
 		Object operacao = e.getSource();
 	
 		//Potencia ao quadrado e raiz quadrada
 		if(operacao == quad) {
-			numero1 = Integer.parseInt(tela.getText());
-			Integer potenciacao = (int) Math.pow(numero1, 2);
+			numero1 = Double.parseDouble(tela.getText());
+			Double potenciacao = (Double) Math.pow(numero1, 2);
 			tela.setText(potenciacao.toString());
 		}
 		if(operacao == raiz) {
-			numero1 = Integer.parseInt(tela.getText());
-			Integer raizQuad = (int) Math.sqrt(numero1);
+			numero1 = Double.parseDouble(tela.getText());
+			Double raizQuad = (Double) Math.sqrt(numero1);
 			tela.setText(raizQuad.toString());	
 		}
 
 		//Soma, subtracao, multiplicacao e divisao
 		if(operacao == mais) {
-			numero1 = Integer.parseInt(tela.getText());
+			numero1 = Double.parseDouble(tela.getText());
 			tela.setText("");
 			operadorAritmetico = "mais";
 		}
 		if(operacao == menos) {
-			numero1 = Integer.parseInt(tela.getText());
+			numero1 = Double.parseDouble(tela.getText());
 			tela.setText("");
 			operadorAritmetico = "menos";
 		}
 		if(operacao == mult) {
-			numero1 = Integer.parseInt(tela.getText());
+			numero1 = Double.parseDouble(tela.getText());
 			tela.setText("");
 			operadorAritmetico = "mult";
 		}
 		if(operacao == divis) {
-			numero1 = Integer.parseInt(tela.getText());
+			numero1 = Double.parseDouble(tela.getText());
 			tela.setText("");
 			operadorAritmetico = "divis";
 		}
@@ -324,30 +325,30 @@ public class Tela extends JFrame implements ActionListener{
 		
 		if(operacao == igual) {
 			
-			Integer resultado;
+			Double resultado;
 			
 			switch(operadorAritmetico) {
 			
 			  case "mais":
-				  numero2 = Integer.parseInt(tela.getText());
+				  numero2 = Double.parseDouble(tela.getText());
 				  resultado = numero1 + numero2;
 				  tela.setText("=" + resultado.toString());
 				  break;
 			    
 			  case "menos":
-				  numero2 = Integer.parseInt(tela.getText());
+				  numero2 = Double.parseDouble(tela.getText());
 				  resultado = numero1 - numero2;
 				  tela.setText("=" + resultado.toString());
 				  break;
 			    
 			  case "mult":
-				  numero2 = Integer.parseInt(tela.getText());
+				  numero2 = Double.parseDouble(tela.getText());
 				  resultado = numero1 * numero2;
 				  tela.setText("=" + resultado.toString());
 				  break;
 				
 			  case "divis":
-				  numero2 = Integer.parseInt(tela.getText());
+				  numero2 = Double.parseDouble(tela.getText());
 				  resultado = numero1 / numero2;
 				  tela.setText("=" + resultado.toString());
 				  break;
