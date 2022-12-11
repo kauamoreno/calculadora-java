@@ -1,5 +1,8 @@
+package calculadora;
+
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.DecimalFormat;
@@ -46,6 +49,7 @@ public class Tela extends JFrame implements ActionListener{
 		setResizable(false);
 		setLocationRelativeTo(null);
 		setLayout(null);
+		setIcon();
 		
 		/*************************JButton's*************************/
 		
@@ -232,6 +236,11 @@ public class Tela extends JFrame implements ActionListener{
 		
 		setVisible(true);
 		
+	}
+
+	//Para adicionar o icone
+	private void setIcon() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("calc_icon.png")));
 	}
 
 	@Override
