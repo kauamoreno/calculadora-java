@@ -280,11 +280,13 @@ public class Tela extends JFrame implements ActionListener{
 	
 	
 	String operadorAritmetico;
+	int numero1 = 0;
+	int numero2;
 	private void operacao(ActionEvent e) {
 		
 		Object operacao = e.getSource();
 		
-		Integer numero1 = null;
+		
 		
 		//Potencia ao quadrado e raiz quadrada
 		if(operacao == quad) {
@@ -298,7 +300,6 @@ public class Tela extends JFrame implements ActionListener{
 			tela.setText(raizQuad.toString());	
 		}
 
-		
 		//Soma, subtracao, multiplicacao e divisao
 		if(operacao == mais) {
 			numero1 = Integer.parseInt(tela.getText());
@@ -329,22 +330,26 @@ public class Tela extends JFrame implements ActionListener{
 			switch(operadorAritmetico) {
 			
 			  case "mais":
-				  resultado = numero1 + Integer.parseInt(tela.getText());
+				  numero2 = Integer.parseInt(tela.getText());
+				  resultado = numero1 + numero2;
 				  tela.setText("=" + resultado.toString());
 				  break;
 			    
 			  case "menos":
-				  resultado = numero1 - Integer.parseInt(tela.getText());
+				  numero2 = Integer.parseInt(tela.getText());
+				  resultado = numero1 - numero2;
 				  tela.setText("=" + resultado.toString());
 				  break;
 			    
 			  case "mult":
-				  resultado = numero1 * Integer.parseInt(tela.getText());
+				  numero2 = Integer.parseInt(tela.getText());
+				  resultado = numero1 * numero2;
 				  tela.setText("=" + resultado.toString());
 				  break;
 				
 			  case "divis":
-				  resultado = numero1 / Integer.parseInt(tela.getText());
+				  numero2 = Integer.parseInt(tela.getText());
+				  resultado = numero1 / numero2;
 				  tela.setText("=" + resultado.toString());
 				  break;
 			}
