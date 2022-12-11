@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.AbstractButton;
 import javax.swing.BorderFactory;
+import javax.swing.Icon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
@@ -104,7 +105,7 @@ public class Tela extends JFrame implements ActionListener{
 		igual.setBounds(300, 570, 85, 100);
 		igual.addActionListener(this::operacao);
 		add(igual);
-		igual.setBackground(new Color(214,129,2));
+		igual.setBackground(new Color(255, 153, 0));
 		
 		dot = new JButton(".");	
 		dot.setBounds(200, 570, 100, 100);
@@ -115,44 +116,43 @@ public class Tela extends JFrame implements ActionListener{
 		mais.setBounds(300, 470, 85, 100);
 		mais.addActionListener(this::operacao);
 		add(mais);
-		mais.setBackground(new Color(214,129,2));
+		mais.setBackground(new Color(255, 153, 0));
 		
 		menos = new JButton("-");	
 		menos.setBounds(300, 370, 85, 100);
 		menos.addActionListener(this::operacao);
 		add(menos);
-		menos.setBackground(new Color(214,129,2));
+		menos.setBackground(new Color(255, 153, 0));
 		
 		mult = new JButton("X");	
 		mult.setBounds(300, 270, 85, 100);
 		mult.addActionListener(this::operacao);
 		add(mult);
-		mult.setBackground(new Color(214,129,2));
+		mult.setBackground(new Color(255, 153, 0));
 		
 		clean = new JButton("C");	
 		clean.setBounds(0, 170, 100, 100);
 		clean.addActionListener(this::limparTela);
 		add(clean);
-		clean.setBackground(new Color(214,129,2));
+		clean.setBackground(new Color(255, 153, 0));
 		
 		quad = new JButton(" X²");	
 		quad.setBounds(100, 170, 100, 100);
 		quad.addActionListener(this::operacao);
 		add(quad);
-		quad.setBackground(new Color(214,129,2));
+		quad.setBackground(new Color(255, 153, 0));
 		
 		raiz = new JButton("√x");	
 		raiz.setBounds(200, 170, 100, 100);
 		raiz.addActionListener(this::operacao);
 		add(raiz);
-		raiz.setBackground(new Color(214,129,2));
+		raiz.setBackground(new Color(255, 153, 0));
 		
 		divis = new JButton("÷");	
 		divis.setBounds(300, 170, 85, 100);
 		divis.addActionListener(this::operacao);
 		add(divis);
-		divis.setBackground(new Color(214,129,2));
-		
+		divis.setBackground(new Color(255, 153, 0));
 
 		//Mudando cor da borda***********
 		Border lineBorder = BorderFactory.createLineBorder(Color.black);
@@ -282,12 +282,11 @@ public class Tela extends JFrame implements ActionListener{
 	String operadorAritmetico;
 	int numero1 = 0;
 	int numero2;
+	
 	private void operacao(ActionEvent e) {
 		
 		Object operacao = e.getSource();
-		
-		
-		
+	
 		//Potencia ao quadrado e raiz quadrada
 		if(operacao == quad) {
 			numero1 = Integer.parseInt(tela.getText());
@@ -355,11 +354,6 @@ public class Tela extends JFrame implements ActionListener{
 			}
 		
 		}	
-		
-		
-		
-		
-	
 	}
 	
 	
