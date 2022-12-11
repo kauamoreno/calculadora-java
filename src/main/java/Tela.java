@@ -237,10 +237,7 @@ public class Tela extends JFrame implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		
 		Object objetoNumero = e.getSource();
-
 		String verifica = tela.getText();
-		
-		
 		
 		//Para caso ja haja um "." não poder ser acrescentado outro
 		if(tela.getText().contains(".")) {
@@ -248,7 +245,6 @@ public class Tela extends JFrame implements ActionListener{
 		}else {
 			if(objetoNumero == dot) {tela.setText(tela.getText() + ".");}
 		}
-		
 		
 		switch(verifica) {
 		  case "0":
@@ -274,9 +270,7 @@ public class Tela extends JFrame implements ActionListener{
 			  if(objetoNumero == n7) {tela.setText(tela.getText() + "7");}
 			  if(objetoNumero == n8) {tela.setText(tela.getText() + "8");}
 			  if(objetoNumero == n9) {tela.setText(tela.getText() + "9");}
-			  
 		}
-	
 	}
 
 		
@@ -285,83 +279,83 @@ public class Tela extends JFrame implements ActionListener{
 	}
 	
 	
-	Integer numero1;
-
+	String operadorAritmetico;
 	private void operacao(ActionEvent e) {
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		/*
 		Object operacao = e.getSource();
 		
-		numero1 = Integer.parseInt(tela.getText());
+		Integer numero1 = null;
 		
-		tela.setText("0");
-		
-		if(operacao == mais) {
-			tela.setText(numero1.toString());
-			if(operacao == igual) {
-				//Integer numero2 = Integer.parseInt(tela.getText());
-				//Integer resultado = numero1 + numero2;
-				tela.setText(numero1.toString());
-			}
-		}
-		
-		if(operacao == menos) {
-
-			//Integer numero2 = Integer.parseInt(tela.getText());
-			//Integer resultado = numero1 - numero2;
-			//tela.setText(resultado.toString());
-		}
-		if(operacao == mult) {
-
-			//Integer numero2 = Integer.parseInt(tela.getText());
-			//Integer resultado = numero1 * numero2;
-			//tela.setText(resultado.toString());
-		}
-		if(operacao == divis) {
-
-			//Integer numero2 = Integer.parseInt(tela.getText());
-			//Integer resultado = numero1 / numero2;
-			//tela.setText(resultado.toString());
-		}
-		
-		if(operacao == igual) {
-			//tela.setText(resultado.toString());
-		}
-		*/
-		
-		
-		/*
-		Integer resultado = null;
-		
-		if(operacao == igual) {
-			mostraResultado(e, resultado);
-		}
-		mostraResultado(e, resultado);
+		//Potencia ao quadrado e raiz quadrada
 		if(operacao == quad) {
+			numero1 = Integer.parseInt(tela.getText());
 			Integer potenciacao = (int) Math.pow(numero1, 2);
-			resultado = potenciacao;
-			//mostraResultado(e, potenciacao);
+			tela.setText(potenciacao.toString());
 		}
 		if(operacao == raiz) {
+			numero1 = Integer.parseInt(tela.getText());
 			Integer raizQuad = (int) Math.sqrt(numero1);
-			resultado = raizQuad;
-			//mostraResultado(e, raizQuad);
+			tela.setText(raizQuad.toString());	
 		}
-		*/
+
+		
+		//Soma, subtracao, multiplicacao e divisao
+		if(operacao == mais) {
+			numero1 = Integer.parseInt(tela.getText());
+			tela.setText("");
+			operadorAritmetico = "mais";
+		}
+		if(operacao == menos) {
+			numero1 = Integer.parseInt(tela.getText());
+			tela.setText("");
+			operadorAritmetico = "menos";
+		}
+		if(operacao == mult) {
+			numero1 = Integer.parseInt(tela.getText());
+			tela.setText("");
+			operadorAritmetico = "mult";
+		}
+		if(operacao == divis) {
+			numero1 = Integer.parseInt(tela.getText());
+			tela.setText("");
+			operadorAritmetico = "divis";
+		}
+		
+		
+		if(operacao == igual) {
+			
+			Integer resultado;
+			
+			switch(operadorAritmetico) {
+			
+			  case "mais":
+				  resultado = numero1 + Integer.parseInt(tela.getText());
+				  tela.setText("=" + resultado.toString());
+				  break;
+			    
+			  case "menos":
+				  resultado = numero1 - Integer.parseInt(tela.getText());
+				  tela.setText("=" + resultado.toString());
+				  break;
+			    
+			  case "mult":
+				  resultado = numero1 * Integer.parseInt(tela.getText());
+				  tela.setText("=" + resultado.toString());
+				  break;
+				
+			  case "divis":
+				  resultado = numero1 / Integer.parseInt(tela.getText());
+				  tela.setText("=" + resultado.toString());
+				  break;
+			}
+		
+		}	
+		
+		
+		
 		
 	
 	}
+	
 	
 }
