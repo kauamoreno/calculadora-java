@@ -5,6 +5,8 @@ import java.awt.Font;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.text.DecimalFormat;
 
 import javax.swing.AbstractButton;
@@ -39,6 +41,7 @@ public class Tela extends JFrame implements ActionListener{
 	JButton divis;
 	
 	JTextField tela;
+	
 	
 	//Construtor da classe
 	public Tela(){
@@ -231,7 +234,10 @@ public class Tela extends JFrame implements ActionListener{
 		tela.setBounds(17, 15, 350, 140);
 		tela.setFont(new Font("Arial", Font.BOLD, 40));
 		tela.setHorizontalAlignment(JTextField.RIGHT);
+		tela.setDocument(new FormatadorJTextField()); //Para que a tela aceite somente numeros
 		add(tela);
+		
+		
 		/***********************************************************/
 		
 		setVisible(true);
@@ -247,7 +253,53 @@ public class Tela extends JFrame implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		
 		Object objetoNumero = e.getSource();
-		String verifica = tela.getText();
+		
+		
+		/*
+		addKeyListener(new KeyAdapter() {
+			public void keyPressed(KeyEvent e) {
+				int codigoDaTeclaPressionada = e.getKeyCode();
+				
+				int teclaNum0 = KeyEvent.VK_0;
+				int teclaNum1 = KeyEvent.VK_1;
+				int teclaNum2 = KeyEvent.VK_2;
+				int teclaNum3 = KeyEvent.VK_3;
+				int teclaNum4 = KeyEvent.VK_4;
+				int teclaNum5 = KeyEvent.VK_5;
+				int teclaNum6 = KeyEvent.VK_6;
+				int teclaNum7 = KeyEvent.VK_7;
+				int teclaNum8 = KeyEvent.VK_8;
+				int teclaNum9 = KeyEvent.VK_9;
+
+				if(tela.getText().equals("0")) {
+					if(codigoDaTeclaPressionada == teclaNum0) {tela.setText("0");;}
+					  if(codigoDaTeclaPressionada == teclaNum1) {tela.setText("1");}
+					  if(codigoDaTeclaPressionada == teclaNum2) {tela.setText("2");}
+					  if(codigoDaTeclaPressionada == teclaNum3) {tela.setText("3");}
+					  if(codigoDaTeclaPressionada == teclaNum4) {tela.setText("4");}
+					  if(codigoDaTeclaPressionada == teclaNum5) {tela.setText("5");}
+					  if(codigoDaTeclaPressionada == teclaNum6) {tela.setText("6");}
+					  if(codigoDaTeclaPressionada == teclaNum7) {tela.setText("7");}
+					  if(codigoDaTeclaPressionada == teclaNum8) {tela.setText("8");}
+					  if(codigoDaTeclaPressionada == teclaNum9) {tela.setText("9");}
+				}else {
+					if(codigoDaTeclaPressionada == teclaNum0) {tela.setText(tela.getText() + "0");}
+					  if(codigoDaTeclaPressionada == teclaNum1) {tela.setText(tela.getText() + "0");}
+					  if(codigoDaTeclaPressionada == teclaNum2) {tela.setText(tela.getText() + "0");}
+					  if(codigoDaTeclaPressionada == teclaNum3) {tela.setText(tela.getText() + "0");}
+					  if(codigoDaTeclaPressionada == teclaNum4) {tela.setText(tela.getText() + "0");}
+					  if(codigoDaTeclaPressionada == teclaNum5) {tela.setText(tela.getText() + "0");}
+					  if(codigoDaTeclaPressionada == teclaNum6) {tela.setText(tela.getText() + "0");}
+					  if(codigoDaTeclaPressionada == teclaNum7) {tela.setText(tela.getText() + "0");}
+					  if(codigoDaTeclaPressionada == teclaNum8) {tela.setText(tela.getText() + "0");}
+					  if(codigoDaTeclaPressionada == teclaNum9) {tela.setText(tela.getText() + "0");}
+				}	
+			}
+		});
+		*/
+		
+		
+		
 		
 		//Para caso ja haja um "." não poder ser acrescentado outro
 		if(tela.getText().contains(".")) {
@@ -256,7 +308,7 @@ public class Tela extends JFrame implements ActionListener{
 			if(objetoNumero == dot) {tela.setText(tela.getText() + ".");}
 		}
 		
-		switch(verifica) {
+		switch(tela.getText()) {
 		  case "0":
 			  if(objetoNumero == n0) {tela.setText("0");}
 			  if(objetoNumero == n1) {tela.setText("1");}
