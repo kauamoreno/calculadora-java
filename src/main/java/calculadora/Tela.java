@@ -392,25 +392,49 @@ public class Tela extends JFrame implements ActionListener{
 			  case "mais":
 				  numero2 = Double.parseDouble(tela.getText());
 				  resultado = numero1 + numero2;
-				  tela.setText(resultado.toString());
+				  
+				  //Caso o resultado termine em ".0" ele o retira
+				  if(resultado.toString().endsWith(".0")) {
+					  tela.setText(resultado.toString().replace(".0", ""));
+				  }else {
+					  tela.setText(resultado.toString());
+				  }
 				  break;
 			    
 			  case "menos":
 				  numero2 = Double.parseDouble(tela.getText());
 				  resultado = numero1 - numero2;
-				  tela.setText(resultado.toString());
+				  
+				  //Caso o resultado termine em ".0" ele o retira
+				  if(resultado.toString().endsWith(".0")) {
+					  tela.setText(resultado.toString().replace(".0", ""));
+				  }else {
+					  tela.setText(resultado.toString());
+				  }
 				  break;
 			    
 			  case "mult":
 				  numero2 = Double.parseDouble(tela.getText());
 				  resultado = numero1 * numero2;
-				  tela.setText(resultado.toString());
+				  
+				  //Caso o resultado termine em ".0" ele o retira
+				  if(resultado.toString().endsWith(".0")) {
+					  tela.setText(resultado.toString().replace(".0", ""));
+				  }else {
+					  tela.setText(resultado.toString());
+				  }
 				  break;
 				
 			  case "divis":
 				  numero2 = Double.parseDouble(tela.getText());
 				  resultado = numero1 / numero2;
-				  tela.setText(resultado.toString());
+				  
+				  //Caso o resultado termine em ".0" ele o retira
+				  if(resultado.toString().endsWith(".0")) {
+					  tela.setText(resultado.toString().replace(".0", ""));
+				  }else {
+					  tela.setText(resultado.toString());
+				  }
 				  break;
 			}
 		
